@@ -73,6 +73,8 @@ from pymodbus.file_message import (
 )
 from pymodbus.logging import Log
 from pymodbus.mei_message import (
+    MeiGenericRequest,
+    MeiGenericResponse,
     ReadDeviceInformationRequest,
     ReadDeviceInformationResponse,
 )
@@ -140,6 +142,7 @@ class ServerDecoder:
         MaskWriteRegisterRequest,
         ReadFifoQueueRequest,
         ReadDeviceInformationRequest,
+        MeiGenericRequest,
     ]
     __sub_function_table = [
         ReturnQueryDataRequest,
@@ -160,6 +163,7 @@ class ServerDecoder:
         ClearOverrunCountRequest,
         GetClearModbusPlusRequest,
         ReadDeviceInformationRequest,
+        MeiGenericRequest,
     ]
 
     @classmethod
@@ -274,6 +278,7 @@ class ClientDecoder:
         MaskWriteRegisterResponse,
         ReadFifoQueueResponse,
         ReadDeviceInformationResponse,
+        MeiGenericResponse,
     ]
     __sub_function_table = [
         ReturnQueryDataResponse,
@@ -294,6 +299,7 @@ class ClientDecoder:
         ClearOverrunCountResponse,
         GetClearModbusPlusResponse,
         ReadDeviceInformationResponse,
+        MeiGenericResponse,
     ]
 
     def __init__(self) -> None:
